@@ -45,41 +45,50 @@ export const popularProducts = [
   {
     id: 1,
     img: "https://d3o2e4jr3mxnm3.cloudfront.net/Mens-Jake-Guitar-Vintage-Crusher-Tee_68382_1_lg.png",
+    offer: "33%",
   },
   {
     id: 2,
     img: "https://i.ibb.co/tBw1ND8/kindpng-2040907.png",
+    offer: "40%",
   },
+
+  // {
+  //   id: ,
+  //   img: "https://i.ibb.co/LCZK6NP/kindpng-222747.png",
+  // },
   {
     id: 3,
-    img: "https://i.ibb.co/f4BZFcd/kindpng-7784070.png",
+    img: "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+    offer: "10%",
   },
   {
     id: 4,
-    img: "https://i.ibb.co/LCZK6NP/kindpng-222747.png",
+    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    offer: "30-40%",
   },
   {
     id: 5,
-    img: "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
+    img: "https://i.ibb.co/g74xVsS/kindpng-2949091.png",
+    offer: "20%",
   },
+  // {
+  //   id: ,
+  //   img: "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
+  // },
   {
     id: 6,
-    img: "https://d3o2e4jr3mxnm3.cloudfront.net/Rocket-Vintage-Chill-Cap_66374_1_lg.png",
+    img: "https://i.ibb.co/mc0RgzW/kindpng-7784070.png",
+    offer: "10%",
   },
   {
     id: 7,
-    img: "https://i.ibb.co/g74xVsS/kindpng-2949091.png",
+    img: "https://i.ibb.co/3kG0Yr4/kindpng-5010405.png",
+    offer: "20%",
   },
   {
     id: 8,
-    img: "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
-  },
-  {
-    id: 9,
-    img: "https://i.ibb.co/BLX255J/kindpng-5010405.png",
+    img: "https://i.ibb.co/4tWzHTp/kindpng-4762655.png",
+    offer: "30%",
   },
 ]
-
-{
-  /* <a href="https://imgbb.com/"><img src="https://i.ibb.co/B2b10r5/kindpng-2040907.png" alt="kindpng-2040907" border="0"></a> */
-}

@@ -12,8 +12,8 @@ export const Container = styled.div`
   position: relative;
 `
 export const Circle = styled.div`
-  width: 200px;
-  height: 200px;
+  width: 230px;
+  height: 230px;
   border-radius: 50%;
   background-color: white;
   position: absolute;
@@ -51,9 +51,21 @@ export const Icon = styled.div`
   justify-content: center;
   margin: 10px;
   transition: all 0.5s ease;
+  cursor: pointer;
 
   &:hover {
     background-color: #e9f5f5;
     transform: scale(1.15);
   }
+`
+export const Deal = styled.p`
+  color: #04874a;
+  font-size: 14px;
+  position: absolute;
+  bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 `

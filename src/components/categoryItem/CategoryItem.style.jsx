@@ -33,4 +33,11 @@ export const Button = styled.button`
   color: gray;
   cursor: pointer;
   font-weight: 600;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: #bdc0c0;
+    transform: scale(1.1);
+    color: white;
+  }
 `

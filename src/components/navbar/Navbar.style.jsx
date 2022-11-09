@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
   height: 60px;
+  padding-inline: 10px;
 `
 export const Wrapper = styled.div`
   padding: 10px 20px;
@@ -43,6 +44,7 @@ export const Center = styled.div`
 export const Logo = styled.h1`
   color: #6a6a6a;
   font-weight: 600;
+  font-size: 38px;
 `
 
 export const LogoDiff = styled.span`

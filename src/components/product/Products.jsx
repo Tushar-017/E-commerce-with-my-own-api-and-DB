@@ -1,13 +1,15 @@
-import { Container } from "./Products.style"
+import { ProductContainer, Container } from "./Products.style"
 import { popularProducts } from "../../data"
 import Product from "./Product"
 
 const Products = () => {
   return (
     <Container>
-      {popularProducts.map((item) => (
-        <Product item={item} key={item.id} />
-      ))}
+      <ProductContainer>
+        {popularProducts.map((item) => (
+          <Product item={item} key={item.id} />
+        ))}
+      </ProductContainer>
     </Container>
   )
 }
