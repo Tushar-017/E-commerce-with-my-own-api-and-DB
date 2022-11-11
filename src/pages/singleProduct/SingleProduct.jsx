@@ -1,4 +1,8 @@
+import { Add, Remove } from "@mui/icons-material"
 import {
+  AddContainer,
+  AmountContainer,
+  Button,
   Container,
   Desc,
   Filter,
@@ -11,6 +15,7 @@ import {
   ImgContainer,
   InfoContainer,
   Price,
+  Qty,
   Title,
   Wrapper,
 } from "./SingleProduct.style"
@@ -50,6 +55,14 @@ const SingleProduct = () => {
               </FilterSize>
             </Filter>
           </FilterContainer>
+          <AddContainer>
+            <AmountContainer>
+              <Remove style={{ cursor: "pointer" }} />
+              <Qty>1</Qty>
+              <Add style={{ cursor: "pointer" }} />
+            </AmountContainer>
+            <Button>ADD TO CART</Button>
+          </AddContainer>
         </InfoContainer>
       </Wrapper>
     </Container>
