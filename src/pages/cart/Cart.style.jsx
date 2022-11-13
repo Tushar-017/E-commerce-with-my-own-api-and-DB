@@ -1,10 +1,12 @@
 import styled from "styled-components"
+import { mobile } from "../../responsive"
 
 export const Container = styled.div`
   min-height: 60vh;
 `
 export const Wrapper = styled.div`
   padding: 20px;
+  ${mobile({ padding: "10px" })}
 `
 
 export const Title = styled.h1`
@@ -20,18 +22,23 @@ export const Top = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+  ${mobile({ padding: "12px 5px" })}
 `
 export const TopButton = styled.button`
   padding: 10px;
   font-weight: 600;
   cursor: pointer;
   border: ${(props) => props.type === "filled" && "none"};
+
   background-color: ${(props) =>
     props.type === "filled" ? "black" : "transparent "};
   color: ${(props) => props.type === "filled" && "white"};
+  ${mobile({ padding: "8px" })}
 `
 
-export const TopTexts = styled.div``
+export const TopTexts = styled.div`
+  ${mobile({ display: "none" })}
+`
 
 export const TopText = styled.span`
   text-decoration: underline;
@@ -42,6 +49,7 @@ export const TopText = styled.span`
 export const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
 `
 export const Info = styled.div`
   flex: 3;
@@ -51,6 +59,7 @@ export const Product = styled.div`
   margin-left: 15px;
   display: flex;
   justify-content: space-between;
+  ${mobile({ flexDirection: "column" })}
 `
 export const ProductDetail = styled.div`
   flex: 2;
@@ -96,10 +105,12 @@ export const ProductAmountContainer = styled.div`
 export const Qty = styled.div`
   font-size: 22px;
   margin: 5px;
+  ${mobile({ margin: "5px 15px" })}
 `
 export const ProductPrice = styled.div`
   font-size: 30px;
   font-weight: 200;
+  ${mobile({ marginBottom: "15px" })}
 `
 
 export const Hr = styled.hr`

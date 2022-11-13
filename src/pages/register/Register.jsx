@@ -28,7 +28,7 @@ const Register = () => {
             By creating an account, I consent to the processing of my entered
             data in accordance with the <b>PRIVACY POLICY</b>
           </Agreement>
-          <Button>CREATE</Button>
+          <Button>JOIN</Button>
         </Form>
       </Wrapper>
     </Container>

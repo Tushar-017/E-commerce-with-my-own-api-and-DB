@@ -1,9 +1,11 @@
 import styled from "styled-components"
+import { mobile } from "../../responsive"
 
 export const Container = styled.div``
 export const Wrapper = styled.div`
   padding: 50px;
   display: flex;
+  ${mobile({ padding: "20px", flexDirection: "column" })}
 `
 export const ImgContainer = styled.div`
   flex: 1;
@@ -12,10 +14,12 @@ export const Image = styled.img`
   width: 100%;
   height: 90vh;
   object-fit: cover;
+  ${mobile({ height: "40vh" })}
 `
 export const InfoContainer = styled.div`
   flex: 1;
   padding: 0px 50px;
+  ${mobile({ padding: "10px" })}
 `
 export const Title = styled.h1`
   font-weight: 200;
@@ -25,6 +29,7 @@ export const Desc = styled.p`
   width: 85%;
   letter-spacing: 0.5px;
   color: #707070;
+  ${mobile({ margin: "8px 0px" })}
 `
 export const Price = styled.span`
   font-weight: 100;
@@ -36,6 +41,7 @@ export const FilterContainer = styled.div`
   justify-content: space-between;
   margin-block: 30px;
   width: 50%;
+  ${mobile({ width: "100% " })}
 `
 export const Filter = styled.div`
   display: flex;
@@ -66,6 +72,7 @@ export const AddContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   width: 50%;
+  ${mobile({ width: "100% " })}
 `
 export const AmountContainer = styled.div`
   display: flex;

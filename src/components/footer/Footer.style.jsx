@@ -1,9 +1,11 @@
 import styled from "styled-components"
+import { mobile } from "../../responsive"
 
 export const Container = styled.div`
   display: flex;
   background-color: black;
   height: 36vh;
+  ${mobile({ flexDirection: "column", height: "100%" })}
 `
 export const Left = styled.div`
   flex: 1;
@@ -17,6 +19,7 @@ export const Logo = styled.h1`
   color: #6a6a6a;
   font-weight: 600;
   font-size: 32px;
+  ${mobile({ fontSize: "25px" })}
 `
 
 export const LogoDiff = styled.span`
@@ -30,6 +33,7 @@ export const Desc = styled.p`
   letter-spacing: 0.7px;
   font-weight: 200;
   max-width: 75%;
+  ${mobile({ fontSize: "12px" })}
 `
 export const SocialContainer = styled.div`
   display: flex;
@@ -51,6 +55,7 @@ export const Center = styled.div`
   flex: 1;
   padding: 20px;
   color: white;
+  ${mobile({ display: "none" })}
 `
 
 export const Title = styled.h3`
@@ -60,6 +65,7 @@ export const Title = styled.h3`
   font-size: 16px;
   margin-top: 10px;
   letter-spacing: 1px;
+  ${mobile({ fontSize: "14px" })}
 `
 export const List = styled.ul`
   margin: 0;
@@ -80,6 +86,7 @@ export const Right = styled.div`
   flex: 1;
   padding: 20px;
   color: white;
+  ${mobile({ backgroundColor: "#d0cfcf", color: "black" })}
 `
 export const ContactItem = styled.div`
   margin-bottom: 20px;

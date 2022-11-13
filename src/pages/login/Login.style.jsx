@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { mobile } from "../../responsive"
 
 export const Container = styled.div`
   width: 100vw;
@@ -11,6 +12,7 @@ export const Wrapper = styled.div`
   width: 22%;
   padding: 20px;
   /* background-color: #b4b4b4; */
+  ${mobile({ width: "75%" })}
 `
 export const Title = styled.h1`
   font-size: 22px;
@@ -38,12 +40,17 @@ export const Input = styled.input`
   flex: 1;
   min-width: 40%;
   border: 1px solid #b4b4b4;
-  /* margin: 20px 10px 0px 0px; */
   padding: 12px;
   font-size: 15px;
   color: #b4b4b4;
   margin-bottom: 15px;
   border-radius: 5px;
+  ${mobile({
+    padding: "12px",
+    backgroundColor: "#eeeeee",
+    fontSize: "12px",
+    border: "none",
+  })}
 `
 export const Agreement = styled.span`
   font-size: 13px;

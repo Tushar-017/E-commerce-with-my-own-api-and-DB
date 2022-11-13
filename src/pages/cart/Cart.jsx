@@ -79,11 +79,11 @@ const Cart = () => {
                     <b>Product:</b> CAMEL THUNDER JACKET
                   </ProductName>
                   <ProductId>
-                    <b>ID:</b> 44449
+                    <b>ID:</b> 44450
                   </ProductId>
-                  <ProductColor color="gray" />
+                  <ProductColor color="burlywood" />
                   <ProductSize>
-                    <b>Size:</b> 12
+                    <b>Size:</b> L
                   </ProductSize>
                 </Details>
               </ProductDetail>
