@@ -10,7 +10,7 @@ const Product = ({ item }) => {
     <Container>
       <Circle />
       <Image src={item.img} />
-      <Deal>Upto {item.offer} off</Deal>
+      {/* <Deal>Upto {item.offer} off</Deal> */}
       <Info>
         <Icon>
           <ShoppingCartOutlined />

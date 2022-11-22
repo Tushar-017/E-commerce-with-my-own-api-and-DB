@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 import Announcement from "./components/announcement/Announcement"
 import Footer from "./components/footer/Footer"
 import Navbar from "./components/navbar/Navbar"
@@ -11,6 +11,7 @@ import Register from "./pages/register/Register"
 import SingleProduct from "./pages/singleProduct/SingleProduct"
 
 function App() {
+  const user = true
   return (
     <BrowserRouter>
       {0 ? (
@@ -19,8 +20,8 @@ function App() {
           {/* <Announcement /> */}
           {/* <Register /> */}
           {/* <Login /> */}
-          <Cart />
-          <Footer />
+
+          {/* <Footer /> */}
         </>
       ) : (
         <>
@@ -28,8 +29,17 @@ function App() {
           <Announcement />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/productList" element={<ProductList />} />
-            <Route path="/singleProduct" element={<SingleProduct />} />
+            <Route path="/products/:category" element={<ProductList />} />
+            <Route path="/product/:id" element={<SingleProduct />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route
+              path="/login"
+              element={user ? <Navigate to="/" /> : <Login />}
+            />
+            <Route
+              path="/register"
+              element={user ? <Navigate to="/" /> : <Register />}
+            />
           </Routes>
           <NewsLetter />
           <Footer />
