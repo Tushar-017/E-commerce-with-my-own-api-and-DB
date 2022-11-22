@@ -1,4 +1,10 @@
-import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
+import {
+  BrowserRouter,
+  Route,
+  Routes,
+  Navigate,
+  useLocation,
+} from "react-router-dom"
 import Announcement from "./components/announcement/Announcement"
 import Footer from "./components/footer/Footer"
 import Navbar from "./components/navbar/Navbar"
@@ -11,40 +17,30 @@ import Register from "./pages/register/Register"
 import SingleProduct from "./pages/singleProduct/SingleProduct"
 
 function App() {
-  const user = true
+  const user = false
+
   return (
     <BrowserRouter>
-      {0 ? (
-        <>
-          <Navbar />
-          {/* <Announcement /> */}
-          {/* <Register /> */}
-          {/* <Login /> */}
-
-          {/* <Footer /> */}
-        </>
-      ) : (
-        <>
-          <Navbar />
-          <Announcement />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/products/:category" element={<ProductList />} />
-            <Route path="/product/:id" element={<SingleProduct />} />
-            <Route path="/cart" element={<Cart />} />
-            <Route
-              path="/login"
-              element={user ? <Navigate to="/" /> : <Login />}
-            />
-            <Route
-              path="/register"
-              element={user ? <Navigate to="/" /> : <Register />}
-            />
-          </Routes>
-          <NewsLetter />
-          <Footer />
-        </>
-      )}
+      <>
+        <Navbar />
+        <Announcement />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/products/:category" element={<ProductList />} />
+          <Route path="/product/:id" element={<SingleProduct />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route
+            path="/login"
+            element={user ? <Navigate to="/" /> : <Login />}
+          />
+          <Route
+            path="/register"
+            element={user ? <Navigate to="/" /> : <Register />}
+          />
+        </Routes>
+        {user && <NewsLetter />}
+        <Footer />
+      </>
     </BrowserRouter>
   )
 }

@@ -57,6 +57,9 @@ export const Icon = styled.div`
     background-color: #e9f5f5;
     transform: scale(1.15);
   }
+  &:active {
+    color: black;
+  }
 `
 export const Deal = styled.p`
   color: #04874a;

@@ -13,7 +13,7 @@ export const ImgContainer = styled.div`
 export const Image = styled.img`
   width: 100%;
   height: 90vh;
-  object-fit: cover;
+  object-fit: contain;
   ${mobile({ height: "40vh" })}
 `
 export const InfoContainer = styled.div`
@@ -56,9 +56,15 @@ export const FilterColor = styled.div`
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  border: ${(props) => props.color === "white" && "0.5px solid black"};
   background-color: ${(props) => props.color};
   margin-left: 5px;
   cursor: pointer;
+  transition: all 2s ease;
+
+  &:hover {
+    border: 1px solid blue;
+  }
 `
 export const FilterSize = styled.select`
   margin-left: 5px;

@@ -28,11 +28,10 @@ const ProductList = () => {
       [e.target.name]: value,
     })
   }
-  // console.log(filters)
 
   return (
     <Container>
-      <Title>Dresses</Title>
+      <Title>{category}</Title>
       <FilterContainer>
         <Filter>
           <FilterText>Filter Products:</FilterText>
