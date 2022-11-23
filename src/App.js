@@ -1,10 +1,4 @@
-import {
-  BrowserRouter,
-  Route,
-  Routes,
-  Navigate,
-  useLocation,
-} from "react-router-dom"
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 import Announcement from "./components/announcement/Announcement"
 import Footer from "./components/footer/Footer"
 import Navbar from "./components/navbar/Navbar"
@@ -15,6 +9,7 @@ import Login from "./pages/login/Login"
 import ProductList from "./pages/productList/ProductList"
 import Register from "./pages/register/Register"
 import SingleProduct from "./pages/singleProduct/SingleProduct"
+import Success from "./pages/Success"
 
 function App() {
   const user = false
@@ -29,6 +24,7 @@ function App() {
           <Route path="/products/:category" element={<ProductList />} />
           <Route path="/product/:id" element={<SingleProduct />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/success" element={<Success />} />
           <Route
             path="/login"
             element={user ? <Navigate to="/" /> : <Login />}

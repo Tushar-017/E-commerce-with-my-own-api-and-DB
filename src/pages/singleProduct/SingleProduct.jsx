@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux"
 import { useLocation } from "react-router-dom"
 import { addProduct } from "../../redux/cartRedux"
 import { publicRequest } from "../../requestMethod"
+
 import {
   AddContainer,
   AmountContainer,

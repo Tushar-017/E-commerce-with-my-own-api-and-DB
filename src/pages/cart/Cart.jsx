@@ -1,5 +1,9 @@
 import { Add, Remove } from "@mui/icons-material"
+import { useState, Fragment, useEffect } from "react"
 import { useSelector } from "react-redux"
+import { useNavigate } from "react-router-dom"
+import StripeCheckout from "react-stripe-checkout"
+import { userRequest } from "../../requestMethod"
 import {
   Bottom,
   Button,
@@ -31,8 +35,35 @@ import {
   Wrapper,
 } from "./Cart.style"
 
+const KEY = process.env.REACT_APP_STRIPE
+// console.log(KEY)
+
 const Cart = () => {
   const cart = useSelector((state) => state.cart)
+  const [stripeToken, setStripeToken] = useState(null)
+  const navigate = useNavigate()
+
+  const onToken = (token) => {
+    setStripeToken(token)
+  }
+  // console.log(stripeToken)
+
+  useEffect(() => {
+    const makeRequest = async () => {
+      try {
+        const res = await userRequest.post("/checkout/payment", {
+          tokenId: stripeToken.id,
+          amount: cart.total * 100,
+        })
+        navigate("/success", {
+          state: { stripeData: res.data, products: cart },
+        })
+      } catch (error) {
+        console.log(error)
+      }
+    }
+    stripeToken && cart.total >= 1 && makeRequest()
+  }, [stripeToken, cart.total, cart, navigate])
   return (
     <Container>
       <Wrapper>
@@ -47,8 +78,8 @@ const Cart = () => {
         </Top>
         <Bottom>
           <Info>
-            {cart.products.map((product) => (
-              <>
+            {cart.products.map((product, i) => (
+              <Fragment key={i}>
                 <Product>
                   <ProductDetail>
                     <Image src={product.img} />
@@ -77,7 +108,7 @@ const Cart = () => {
                   </PriceDetail>
                 </Product>
                 <Hr />
-              </>
+              </Fragment>
             ))}
           </Info>
           <Summary>
@@ -98,7 +129,19 @@ const Cart = () => {
               <SummaryItemText>Total</SummaryItemText>
               <SummaryItemPrice>$ {cart.total}</SummaryItemPrice>
             </SummaryItem>
-            <Button>CHECKOUT NOW</Button>
+
+            <StripeCheckout
+              name="ShopWings"
+              image="https://avatars.githubusercontent.com/u/1486366?v=4"
+              billingAddress
+              shippingAddress
+              description={`Your total is $${cart.total}`}
+              amount={cart.total * 100}
+              token={onToken}
+              stripeKey={KEY}
+            >
+              <Button>CHECKOUT NOW</Button>
+            </StripeCheckout>
           </Summary>
         </Bottom>
       </Wrapper>
