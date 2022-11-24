@@ -17,7 +17,7 @@ import {
 } from "./Navbar.style"
 
 const Navbar = () => {
-  const qty = useSelector((state) => state.cart.quantity)
+  const qty = useSelector((state) => state.cart.qty)
 
   return (
     <Container>

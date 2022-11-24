@@ -1,3 +1,4 @@
+import { useSelector } from "react-redux"
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom"
 import Announcement from "./components/announcement/Announcement"
 import Footer from "./components/footer/Footer"
@@ -12,7 +13,7 @@ import SingleProduct from "./pages/singleProduct/SingleProduct"
 import Success from "./pages/Success"
 
 function App() {
-  const user = false
+  const user = useSelector((state) => state.user.currentUser)
 
   return (
     <BrowserRouter>

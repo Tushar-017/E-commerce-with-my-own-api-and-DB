@@ -67,6 +67,15 @@ export const Button = styled.button`
   margin-bottom: 10px;
   letter-spacing: 1px;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+`
+
+export const Error = styled.span`
+  color: red;
 `
 
 export const Link = styled.a`
