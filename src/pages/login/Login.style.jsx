@@ -41,8 +41,8 @@ export const Input = styled.input`
   min-width: 40%;
   border: 1px solid #b4b4b4;
   padding: 12px;
-  font-size: 15px;
-  color: #b4b4b4;
+  font-size: 17px;
+  color: #9b9b9b;
   margin-bottom: 15px;
   border-radius: 5px;
   ${mobile({
@@ -78,10 +78,15 @@ export const Error = styled.span`
   color: red;
 `
 
-export const Link = styled.a`
+export const LInk = styled.a`
   margin-block: 5px;
   font-size: 12px;
   text-decoration: underline;
 
+  cursor: pointer;
+`
+
+export const Guest = styled.p`
+  color: teal;
   cursor: pointer;
 `

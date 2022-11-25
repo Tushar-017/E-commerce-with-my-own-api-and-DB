@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { login } from "../../redux/apiCalls"
+import { Link } from "react-router-dom"
 import {
   Agreement,
   Button,
@@ -9,12 +10,16 @@ import {
   Input,
   Title,
   Wrapper,
-  Link,
+  LInk,
   Error,
+  Guest,
 } from "./Login.style"
 
 const Login = () => {
-  const [user, setUser] = useState({})
+  const [user, setUser] = useState({
+    username: "",
+    password: "",
+  })
 
   const dispatch = useDispatch()
   const { isFetching, error } = useSelector((state) => state.user)
@@ -34,8 +39,12 @@ const Login = () => {
           <Input
             placeholder="Username"
             name="username"
+            value={user.username}
             onChange={(e) =>
-              setUser({ ...user, [e.target.name]: e.target.value })
+              setUser((prevState) => ({
+                ...prevState,
+                [e.target.name]: e.target.value,
+              }))
             }
           />
 
@@ -43,8 +52,12 @@ const Login = () => {
             placeholder="Password"
             type="password"
             name="password"
+            value={user.password}
             onChange={(e) =>
-              setUser({ ...user, [e.target.name]: e.target.value })
+              setUser((prevState) => ({
+                ...prevState,
+                [e.target.name]: e.target.value,
+              }))
             }
           />
 
@@ -55,9 +68,16 @@ const Login = () => {
           <Button onClick={handleLogin} disabled={isFetching}>
             LOGIN
           </Button>
+          <Guest
+            onClick={() => setUser({ username: "guest", password: "123456" })}
+          >
+            GUEST CREDENTIALS
+          </Guest>
           {error && <Error>Wrong credentials.</Error>}
-          <Link>DO NOT REMEMBER THE PASSWORD ?</Link>
-          <Link>CREATE NEW ACCOUNT</Link>
+          <LInk>DO NOT REMEMBER THE PASSWORD ?</LInk>
+          <LInk>
+            <Link to="/register">CREATE NEW ACCOUNT</Link>
+          </LInk>
         </Form>
       </Wrapper>
     </Container>
