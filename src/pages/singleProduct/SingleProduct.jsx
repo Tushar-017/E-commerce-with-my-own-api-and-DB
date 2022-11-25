@@ -1,7 +1,7 @@
 import { Add, Remove } from "@mui/icons-material"
 import { useEffect, useState } from "react"
-import { useDispatch } from "react-redux"
-import { useLocation } from "react-router-dom"
+import { useDispatch, useSelector } from "react-redux"
+import { useLocation, useNavigate } from "react-router-dom"
 import { addProduct } from "../../redux/cartRedux"
 import { publicRequest } from "../../requestMethod"
 
@@ -27,6 +27,7 @@ import {
 } from "./SingleProduct.style"
 
 const SingleProduct = () => {
+  const user = useSelector((state) => state.user.currentUser)
   const location = useLocation()
   const productId = location.pathname.split("/")[2]
 
@@ -35,6 +36,7 @@ const SingleProduct = () => {
   const [color, setColor] = useState("")
   const [size, setSize] = useState("")
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   useEffect(() => {
     const getProduct = async () => {
@@ -99,7 +101,11 @@ const SingleProduct = () => {
                 onClick={() => handleQuantity("inc")}
               />
             </AmountContainer>
-            <Button onClick={handleAddCart}>ADD TO CART</Button>
+            <Button
+              onClick={() => (!user ? navigate("/login") : handleAddCart())}
+            >
+              ADD TO CART
+            </Button>
           </AddContainer>
         </InfoContainer>
       </Wrapper>

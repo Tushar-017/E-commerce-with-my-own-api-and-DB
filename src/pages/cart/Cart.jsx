@@ -1,9 +1,10 @@
 import { Add, Remove } from "@mui/icons-material"
 import { useState, Fragment, useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
 import { useNavigate } from "react-router-dom"
 import StripeCheckout from "react-stripe-checkout"
 import { userRequest } from "../../requestMethod"
+import { emptyCart } from "../../redux/cartRedux"
 import {
   Bottom,
   Button,
@@ -47,6 +48,7 @@ const Cart = () => {
     setStripeToken(token)
   }
   // console.log(stripeToken)
+  const dispatch = useDispatch()
 
   useEffect(() => {
     const makeRequest = async () => {
@@ -58,6 +60,7 @@ const Cart = () => {
         navigate("/success", {
           state: { stripeData: res.data, products: cart },
         })
+        dispatch(emptyCart())
       } catch (error) {
         console.log(error)
       }

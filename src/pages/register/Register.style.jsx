@@ -69,3 +69,6 @@ export const Button = styled.button`
   cursor: pointer;
   letter-spacing: 1px;
 `
+export const Error = styled.span`
+  color: red;
+`

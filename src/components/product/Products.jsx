@@ -1,8 +1,9 @@
 import { ProductContainer, Container } from "./Products.style"
-import { popularProducts } from "../../data"
+// import { popularProducts } from "../../data"
 import Product from "./Product"
 import axios from "axios"
 import { useEffect, useState } from "react"
+import { BASE_URL } from "../../requestMethod"
 
 const Products = ({ category, filters, sort }) => {
   // STATE
@@ -15,8 +16,8 @@ const Products = ({ category, filters, sort }) => {
       try {
         const res = await axios.get(
           category
-            ? `http://localhost:8000/api/products?category=${category}`
-            : "http://localhost:8000/api/products"
+            ? `${BASE_URL}/api/products?category=${category}`
+            : `${BASE_URL}/api/products`
         )
         setProducts(res.data)
       } catch (error) {}

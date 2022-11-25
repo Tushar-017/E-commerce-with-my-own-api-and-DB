@@ -56,10 +56,6 @@ export const popularProducts = [
     offer: "40%",
   },
 
-  // {
-  //   id: ,
-  //   img: "https://i.ibb.co/LCZK6NP/kindpng-222747.png",
-  // },
   {
     id: 3,
     img: "https://images.ctfassets.net/5gvckmvm9289/3BlDoZxSSjqAvv1jBJP7TH/65f9a95484117730ace42abf64e89572/Noissue-x-Creatsy-Tote-Bag-Mockup-Bundle-_4_-2.png",
@@ -75,10 +71,7 @@ export const popularProducts = [
     img: "https://i.ibb.co/g74xVsS/kindpng-2949091.png",
     offer: "20%",
   },
-  // {
-  //   id: ,
-  //   img: "https://www.pngarts.com/files/3/Women-Jacket-PNG-High-Quality-Image.png",
-  // },
+
   {
     id: 6,
     img: "https://i.ibb.co/mc0RgzW/kindpng-7784070.png",
@@ -95,3 +88,5 @@ export const popularProducts = [
     offer: "30%",
   },
 ]
+
+// Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique esse reprehenderit harum natus quae quia aspernatur, aut non perferendis voluptates.

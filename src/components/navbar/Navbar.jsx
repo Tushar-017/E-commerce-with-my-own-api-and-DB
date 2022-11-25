@@ -1,7 +1,8 @@
 import { Search, ShoppingCartOutlined } from "@mui/icons-material"
 import { Link } from "react-router-dom"
 import Badge from "@mui/material/Badge"
-import { useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux"
+import { logoutSuccess } from "../../redux/userRedux"
 import {
   Container,
   Wrapper,
@@ -15,9 +16,18 @@ import {
   Right,
   MenuItem,
 } from "./Navbar.style"
+import { emptyCart } from "../../redux/cartRedux"
 
 const Navbar = () => {
   const qty = useSelector((state) => state.cart.qty)
+  const user = useSelector((state) => state.user.currentUser)
+  const dispatch = useDispatch()
+
+  const handleLogout = () => {
+    // e.preventDefault()
+    dispatch(logoutSuccess())
+    dispatch(emptyCart())
+  }
 
   return (
     <Container>
@@ -30,13 +40,16 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>
-          <Logo>
-            Shop<LogoDiff>wings</LogoDiff>
-          </Logo>
+          <Link to="/">
+            <Logo>
+              Shop<LogoDiff>wings</LogoDiff>
+            </Logo>
+          </Link>
         </Center>
         <Right>
-          <MenuItem>REGISTER</MenuItem>
-          <MenuItem>SIGN IN</MenuItem>
+          <Link to="/register">{!user && <MenuItem>REGISTER</MenuItem>}</Link>
+          <Link to="/login">{!user && <MenuItem>SIGN IN</MenuItem>}</Link>
+          {user && <MenuItem onClick={handleLogout}>LOGOUT</MenuItem>}
           <Link to="/cart">
             <MenuItem>
               <Badge badgeContent={qty} color="primary">

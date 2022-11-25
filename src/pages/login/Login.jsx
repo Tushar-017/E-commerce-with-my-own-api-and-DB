@@ -14,14 +14,15 @@ import {
 } from "./Login.style"
 
 const Login = () => {
-  const [username, setUsername] = useState("")
-  const [password, setPassword] = useState("")
+  const [user, setUser] = useState({})
+
   const dispatch = useDispatch()
   const { isFetching, error } = useSelector((state) => state.user)
 
   const handleLogin = (e) => {
     e.preventDefault()
-    login(dispatch, { username, password })
+    // console.log(user)
+    login(dispatch, user)
   }
 
   return (
@@ -32,13 +33,19 @@ const Login = () => {
         <Form>
           <Input
             placeholder="Username"
-            onChange={(e) => setUsername(e.target.value)}
+            name="username"
+            onChange={(e) =>
+              setUser({ ...user, [e.target.name]: e.target.value })
+            }
           />
 
           <Input
             placeholder="Password"
             type="password"
-            onChange={(e) => setPassword(e.target.value)}
+            name="password"
+            onChange={(e) =>
+              setUser({ ...user, [e.target.name]: e.target.value })
+            }
           />
 
           <Agreement>
