@@ -16,8 +16,8 @@ const Products = ({ category, filters, sort }) => {
       try {
         const res = await axios.get(
           category
-            ? `${BASE_URL}/api/products?category=${category}`
-            : `${BASE_URL}/api/products`
+            ? `${BASE_URL}/products?category=${category}`
+            : `${BASE_URL}/products`
         )
         setProducts(res.data)
       } catch (error) {}
